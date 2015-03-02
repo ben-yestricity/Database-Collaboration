@@ -1,0 +1,37 @@
+var tree = {id: 1, children: []};
+
+var findChildren = function(node) {
+  var nodeID = node.id;
+  var children = [];
+  var counter = 0;
+  for (var i = 0; i < graph.edges.length; i++) {
+    if (graph.edges.source === node.id) {
+      children[counter] = node;
+      counter++;
+    } else {
+      children.splice(graph.edges.source)
+    };
+    node.children = children[counter];
+  };
+  findChildren(children);
+};
+
+tree = findChildren(tree);
+
+object = {
+  database:[
+  {
+    thing: "Okay"
+  },{
+    thing: "Alright"
+  }
+  ]
+}
+
+function analyize(object){
+  var object_base = object["database"]
+  for (var i = 0; i < object_base.length; i++){
+    new_database.push(object_base[i]["thing"])
+  }
+  console.log(new_database)
+}
